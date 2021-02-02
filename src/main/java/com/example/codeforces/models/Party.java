@@ -1,6 +1,5 @@
 package com.example.codeforces.models;
 
-import java.lang.reflect.Member;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

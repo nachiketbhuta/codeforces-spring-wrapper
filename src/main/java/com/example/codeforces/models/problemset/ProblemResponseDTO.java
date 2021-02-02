@@ -1,16 +1,16 @@
-package com.example.codeforces.problemset.models;
+package com.example.codeforces.models.problemset;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
 public class ProblemResponseDTO {
 	private String status;
-	private ResponseResult result;
+	private ProblemsResponseResult result;
 
 	public ProblemResponseDTO() {
 	}
 
-	public ProblemResponseDTO(String status, ResponseResult result) {
+	public ProblemResponseDTO(String status, ProblemsResponseResult result) {
 		super();
 		this.status = status;
 		this.result = result;
@@ -24,11 +24,11 @@ public class ProblemResponseDTO {
 		this.status = status;
 	}
 
-	public ResponseResult getResult() {
+	public ProblemsResponseResult getResult() {
 		return result;
 	}
 
-	public void setResult(ResponseResult result) {
+	public void setResult(ProblemsResponseResult result) {
 		this.result = result;
 	}
 

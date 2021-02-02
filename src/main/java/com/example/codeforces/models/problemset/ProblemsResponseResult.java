@@ -1,18 +1,18 @@
-package com.example.codeforces.problemset.models;
+package com.example.codeforces.models.problemset;
 
 import java.util.List;
 
 import com.example.codeforces.models.Problem;
 import com.example.codeforces.models.ProblemStatistics;
 
-public class ResponseResult {
+public class ProblemsResponseResult {
 	private List<Problem> problems;
 	private List<ProblemStatistics> problemStatistics;
 
-	public ResponseResult() {
+	public ProblemsResponseResult() {
 	}
 
-	public ResponseResult(List<Problem> problems, List<ProblemStatistics> problemStatistics) {
+	public ProblemsResponseResult(List<Problem> problems, List<ProblemStatistics> problemStatistics) {
 		super();
 		this.problems = problems;
 		this.problemStatistics = problemStatistics;
