@@ -29,4 +29,5 @@ public class ProblemsController {
 		RecentStatusResponseDTO response = problemService.getRecentStatus(count);
 		return ResponseEntity.ok(response);
 	}
+
 }
