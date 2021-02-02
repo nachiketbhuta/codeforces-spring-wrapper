@@ -1,13 +1,27 @@
-package com.example.codeforces.problemset.models;
+package com.example.codeforces.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties
-public class BaseProblem {
+public class ProblemStatistics {
+	private int solvedCount;
 	private int contestId;
 	private String index;
 
-	public BaseProblem() {
+	public ProblemStatistics() {
+	}
+
+	public ProblemStatistics(int solvedCount) {
+		super();
+		this.solvedCount = solvedCount;
+	}
+
+	public int getSolvedCount() {
+		return solvedCount;
+	}
+
+	public void setSolvedCount(int solvedCount) {
+		this.solvedCount = solvedCount;
 	}
 
 	public int getContestId() {

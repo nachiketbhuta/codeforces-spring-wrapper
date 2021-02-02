@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.codeforces.problemset.models.ProblemResponseDTO;
+import com.example.codeforces.services.ProblemService;
 
 @RestController
 @RequestMapping("/problemset")
@@ -15,6 +16,9 @@ public class ProblemsController {
 
 	@Autowired
 	private RestTemplate restTemplate;
+
+	@Autowired
+	private ProblemService problemService;
 
 	@GetMapping("/")
 	public ResponseEntity<ProblemResponseDTO> getProblems() {

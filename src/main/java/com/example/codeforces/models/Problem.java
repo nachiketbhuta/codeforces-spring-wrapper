@@ -1,8 +1,11 @@
-package com.example.codeforces.problemset.models;
+package com.example.codeforces.models;
 
 import java.util.List;
 
-public class Problem extends BaseProblem {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties
+public class Problem {
 	private String problemsetName;
 	private String name;
 	private String type;
@@ -10,10 +13,14 @@ public class Problem extends BaseProblem {
 	private int rating;
 	private List<String> tags;
 
+	private int contestId;
+	private String index;
+
 	public Problem() {
 	}
 
-	public Problem(String problemsetName, String name, String type, double points, int rating, List<String> tags) {
+	public Problem(String problemsetName, String name, String type, double points, int rating, List<String> tags,
+			int contestId, String index) {
 		super();
 		this.problemsetName = problemsetName;
 		this.name = name;
@@ -21,6 +28,8 @@ public class Problem extends BaseProblem {
 		this.points = points;
 		this.rating = rating;
 		this.tags = tags;
+		this.contestId = contestId;
+		this.index = index;
 	}
 
 	public String getProblemsetName() {
@@ -71,4 +80,19 @@ public class Problem extends BaseProblem {
 		this.tags = tags;
 	}
 
+	public int getContestId() {
+		return contestId;
+	}
+
+	public void setContestId(int contestId) {
+		this.contestId = contestId;
+	}
+
+	public String getIndex() {
+		return index;
+	}
+
+	public void setIndex(String index) {
+		this.index = index;
+	}
 }

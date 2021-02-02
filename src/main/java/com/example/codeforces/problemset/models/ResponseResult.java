@@ -2,6 +2,9 @@ package com.example.codeforces.problemset.models;
 
 import java.util.List;
 
+import com.example.codeforces.models.Problem;
+import com.example.codeforces.models.ProblemStatistics;
+
 public class ResponseResult {
 	private List<Problem> problems;
 	private List<ProblemStatistics> problemStatistics;
