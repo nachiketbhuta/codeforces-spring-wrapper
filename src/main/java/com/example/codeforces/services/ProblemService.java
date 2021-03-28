@@ -1,29 +1,31 @@
 package com.example.codeforces.services;
 
+import com.example.codeforces.models.problemset.ProblemResponseDTO;
+import com.example.codeforces.models.problemset.RecentStatusResponseDTO;
+import com.example.codeforces.utilities.CodeforcesInvoker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.codeforces.models.problemset.ProblemResponseDTO;
-import com.example.codeforces.models.problemset.RecentStatusResponseDTO;
-
 @Service
 public class ProblemService {
+
 	@Autowired
-	private RestTemplate restTemplate;
+	CodeforcesInvoker codeforcesInvoker;
 
 	public ProblemResponseDTO getProblemsByTags(String tags) {
 		String requestUrl = "http://codeforces.com/api/problemset.problems";
 		if (!tags.isEmpty()) {
 			requestUrl = requestUrl + "?tags=" + tags;
 		}
-		ProblemResponseDTO response = restTemplate.getForObject(requestUrl, ProblemResponseDTO.class);
-		return response;
+		return codeforcesInvoker.codeforcesGetCall(requestUrl, ProblemResponseDTO.class).getBody();
+
 	}
 
-	public RecentStatusResponseDTO getRecentStatus(int count) {
+	public RecentStatusResponseDTO getRecentStatus(Integer count) {
 		String requestUrl = "http://codeforces.com/api/problemset.recentStatus?count=" + count;
-		RecentStatusResponseDTO response = restTemplate.getForObject(requestUrl, RecentStatusResponseDTO.class);
-		return response;
+		return codeforcesInvoker.codeforcesGetCall(requestUrl, RecentStatusResponseDTO.class).getBody();
 	}
+
+
 }
